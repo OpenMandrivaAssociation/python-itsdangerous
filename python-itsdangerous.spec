@@ -9,7 +9,7 @@ URL:            http://pythonhosted.org/itsdangerous/
 Source0:        http://pypi.python.org/packages/source/i/%{upstream_name}/%{upstream_name}-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python-setuptools
-%py_requires -d
+BuildRequires:  python-devel
 
 %description
 Itsdangerous is a Python library for passing data through untrusted 

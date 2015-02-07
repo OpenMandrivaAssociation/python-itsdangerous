@@ -35,5 +35,5 @@ PYTHONPATH=%{buildroot}%{python_sitelib} %{__python} tests.py
 
 %files
 %doc LICENSE CHANGES README
-%{python_sitelib}/%{upstream_name}.py*
-%{python_sitelib}/%{upstream_name}*.egg-info
+%{python3_sitelib}/%{upstream_name}.py*
+%{python3_sitelib}/%{upstream_name}*.egg-info

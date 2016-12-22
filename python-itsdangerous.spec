@@ -1,8 +1,9 @@
 %global upstream_name itsdangerous
 
 Name:           python-%{upstream_name}
-Version:        0.23
-Release:        2
+Version:        0.24
+Release:        1
+Group:		Development/Python
 Summary:        Python library for passing trusted data to untrusted environments
 License:        BSD
 URL:            http://pythonhosted.org/itsdangerous/

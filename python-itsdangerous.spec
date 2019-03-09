@@ -1,7 +1,7 @@
 %global upstream_name itsdangerous
 
 Name:           python-%{upstream_name}
-Version:        0.24
+Version:        1.1.0
 Release:        1
 Group:		Development/Python
 Summary:        Python library for passing trusted data to untrusted environments
@@ -37,7 +37,7 @@ Signatures (JWS).
 
 %prep
 %setup -q -n %{upstream_name}-%{version}
-rm -r *.egg-info
+#rm -r *.egg-info
 
 cp -a . %py2dir
 
@@ -53,15 +53,17 @@ pushd %py2dir
 pushd %py2dir
 %{__python2} setup.py install -O1 --skip-build --root %{buildroot}
 
-%check
-PYTHONPATH=%{buildroot}%{python_sitelib} %{__python} tests.py
+#%check
+#PYTHONPATH=%{buildroot}%{python_sitelib} %{__python} tests.py
 
 %files
-%doc LICENSE CHANGES README
-%{python3_sitelib}/%{upstream_name}.py*
+%doc LICENSE.rst CHANGES.rst README.rst
+%{python3_sitelib}/%{upstream_name}/*.py*
+%{python3_sitelib}/%{upstream_name}/*/*.py*
 %{python3_sitelib}/%{upstream_name}*.egg-info
 
 %files -n python2-itsdangerous
-%doc LICENSE CHANGES README
-%{python2_sitelib}/%{upstream_name}.py*
+%doc LICENSE.rst CHANGES.rst README.rst
+%{python2_sitelib}/%{upstream_name}/*.py*
+#%{python2_sitelib}/%{upstream_name}/*/*/*.py*
 %{python2_sitelib}/%{upstream_name}*.egg-info

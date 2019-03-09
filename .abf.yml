@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   itsdangerous-0.24.tar.gz: 0a6ae9c20cd72e89d75314ebc7b0f390f93e6a0d
+sources:
+  itsdangerous-1.1.0.tar.gz: b79fef5caacdd247f7def3fe59e6def34bc86905

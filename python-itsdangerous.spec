@@ -2,7 +2,7 @@
 
 Name:           python-%{upstream_name}
 Version:        1.1.0
-Release:        2
+Release:        3
 Group:		Development/Python
 Summary:        Python library for passing trusted data to untrusted environments
 License:        BSD
@@ -59,7 +59,7 @@ pushd %py2dir
 %files
 %doc LICENSE.rst CHANGES.rst README.rst
 %{python3_sitelib}/%{upstream_name}/*.py*
-%{python3_sitelib}/%{upstream_name}/*/*.py*
+#{python3_sitelib}/%{upstream_name}/*/*.py*
 %{python3_sitelib}/%{upstream_name}*.egg-info
 
 %files -n python2-itsdangerous

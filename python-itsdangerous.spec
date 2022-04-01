@@ -38,3 +38,4 @@ Signatures (JWS).
 %{python3_sitelib}/%{upstream_name}/*.py*
 #{python3_sitelib}/%{upstream_name}/*/*.py*
 %{python3_sitelib}/%{upstream_name}*.egg-info
+%{python3_sitelib}/itsdangerous/py.typed

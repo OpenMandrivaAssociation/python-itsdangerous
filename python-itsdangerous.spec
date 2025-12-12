@@ -2,7 +2,7 @@
 
 Name:           python-%{upstream_name}
 Version:        2.1.2
-Release:        2
+Release:        3
 Group:		Development/Python
 Summary:        Python library for passing trusted data to untrusted environments
 License:        BSD

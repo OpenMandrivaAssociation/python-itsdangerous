@@ -1,14 +1,15 @@
 %global upstream_name itsdangerous
 
 Name:           python-%{upstream_name}
-Version:        2.1.2
-Release:        4
+Version:        2.2.0
+Release:        1
 Group:		Development/Python
 Summary:        Python library for passing trusted data to untrusted environments
 License:        BSD
 URL:            https://pythonhosted.org/itsdangerous/
-Source0:        http://pypi.python.org/packages/source/i/%{upstream_name}/%{upstream_name}-%{version}.tar.gz
+Source0:        https://files.pythonhosted.org/packages/source/i/%{upstream_name}/%{upstream_name}-%{version}.tar.gz
 BuildArch:      noarch
+BuildSystem:	python
 BuildRequires:  python-setuptools
 BuildRequires:  python-devel
 
@@ -21,21 +22,9 @@ Internally itsdangerous uses HMAC and SHA1 for signing by default and bases the
 implementation on the Django signing module. It also however supports JSON Web 
 Signatures (JWS).
 
-%prep
-%setup -q -n %{upstream_name}-%{version}
-#rm -r *.egg-info
-%build
-%{__python} setup.py build
-
-%install
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
-
-#%check
-#PYTHONPATH=%{buildroot}%{python_sitelib} %{__python} tests.py
-
 %files
-%doc LICENSE.rst CHANGES.rst README.rst
+%doc CHANGES.rst
 %{python3_sitelib}/%{upstream_name}/*.py*
-#{python3_sitelib}/%{upstream_name}/*/*.py*
-%{python3_sitelib}/%{upstream_name}*.egg-info
+%{python3_sitelib}/%{upstream_name}/__pycache__
+%{python3_sitelib}/%{upstream_name}*.dist-info
 %{python3_sitelib}/itsdangerous/py.typed
